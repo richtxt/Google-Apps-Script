@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+  </head>
+  <body>
+    <h1 align='center'>Select the person who goes by:</h1><br><h1 align='center'><?= unmatched.name ?></h1>
+    <div class='buttons'>
+    <? for (var i = 0; i < unmatched.matches.length; i++) { ?>
+      <input align='center' type="button" value="<?= unmatched.matches[i] ?>" onclick="google.script.run.processName('<?= unmatched.matches[i] ?>');google.script.host.close()" />
+    <? } ?>
+    </div>
+    <p class='copyright'>Created and Coded by Rich Miller</p>
+    <img src="https://images.verizondigitalmedia.com/2018/06/vdms-logo-900x93.png">
+  </body>
+</html>
+<style>
+.buttons {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-flow: row wrap;
+}
+.copyright {
+    position:absolute;
+    bottom:0;
+    right:0;
+    font-size: x-small;
+}
+img {
+    position: absolute;
+    left: 0px;
+    bottom: 10px;
+    width: 250px;
+    height: 30px;
+}
+</style>
